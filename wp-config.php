@@ -18,18 +18,35 @@
  * @package WordPress
  */
 
+
+if($_SERVER["HTTP_HOST"] == 'localhost:8888'){
+
+  $db_name = 'donuts';
+  $user_name = 'root';
+  $password = 'root';
+  $hostname = 'localhost';
+
+}else{
+
+  $db_name = 'wordpress';
+  $user_name = 'wordpress';
+  $password = '6d2e9bb47a3227568592010c95fd009736786903ae71b858';
+  $hostname = 'localhost';
+
+}
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'donuts');
+define('DB_NAME', $db_name);
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', $user_name);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', $password);
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $hostname);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
